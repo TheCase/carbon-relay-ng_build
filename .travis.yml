@@ -17,7 +17,7 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure: PLeNImnSVrCCnEGkqVDFS5sBxOnYacfqpvtKx8ljCcEGdYvRPbB/rOoGDKvNQc3fqFZUsRry3abaClrZtsfjs56pL7S0FOQb6jR/rWK4H5r2hnzPnq4Lq6oRIsD+qgz9WpklpzStvm6RFdMZg7X7A1SONujVL//YbwRtvQig3wQ=
+    secure: ORvMvzBqBlSzizH2BCWF7h3Dq2O9XzI8rVK0jpIFWsOSqJzD7cuTs63mIzzuG09L1/vfr3NS/d8aSgLw2BmumAxAVgmgtxBJeFqd6rGgrCte3yK4fWgRUsh9PKHKV2TrZ2qK2BESZEnJXrXUsgeIHNKRasrnulLrVrJgY6ZUzd4=
   file: carbon-relay-ng.tar.gz
   on:
     repo: TheCase/carbon-relay-ng_build
