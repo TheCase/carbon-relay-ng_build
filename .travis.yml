@@ -1,0 +1,25 @@
+language: go 
+
+before_install:
+  - go get -d github.com/graphite-ng/carbon-relay-ng
+  - go get github.com/jteeuwen/go-bindata/...
+
+install:
+  - cd $HOME/gopath/src/github.com/graphite-ng/carbon-relay-ng
+  - $HOME/gopath/bin/go-bindata admin_http_assets
+  - go build
+
+before_deploy:
+  - tar -zcvf carbon-relay-ng.tar.gz carbon-relay-ng
+  - cp carbon-relay-ng.tar.gz $HOME/gopath/src/github.com/TheCase/carbon-relay-ng_build/.
+  - cd $HOME/gopath/src/github.com/TheCase/carbon-relay-ng_build
+
+deploy:
+  provider: releases
+  api_key:
+    secure: PLeNImnSVrCCnEGkqVDFS5sBxOnYacfqpvtKx8ljCcEGdYvRPbB/rOoGDKvNQc3fqFZUsRry3abaClrZtsfjs56pL7S0FOQb6jR/rWK4H5r2hnzPnq4Lq6oRIsD+qgz9WpklpzStvm6RFdMZg7X7A1SONujVL//YbwRtvQig3wQ=
+  file: carbon-relay-ng.tar.gz
+  on:
+    repo: TheCase/carbon-relay-ng_build
+    tags: true
+    all_branches: true
